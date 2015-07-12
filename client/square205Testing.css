@@ -1,0 +1,232 @@
+/*:root {
+  -webkit-font-smoothing: antialiased;
+}*/
+
+figcaption .line {
+  text-align: center;
+  background: #fff;
+  height: 2px;
+  width: 22px;
+  
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 1rem;
+  opacity: 0;
+  -moz-transition: opacity 0.5s ease .1s, -moz-transform 0.45s;
+  -webkit-transition: opacity 0.5s ease .1s, -webkit-transform 0.45s;
+  -o-transition: opacity 0.5s ease .1s, -o-transform 0.45s;
+  transition: opacity 0.5s ease .1s, transform 0.45s;
+  -moz-transform: scale(0);
+  -webkit-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0);
+}
+
+figcaption:hover .line
+{
+  opacity:1;
+  opacity: 1;
+  -moz-transform: scale(1);
+  -webkit-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+}
+
+.grid {
+	/*position: relative;*/
+	/*margin: 0 auto;*/
+	/*padding: 1em 0 4em;*/
+	/*max-width: 1000px;*/
+	/*list-style: none;*/
+	/*text-align: center;*/
+  font-size: 0;
+  /*display: flex;*/
+}
+
+.grid-p {
+  font-size: 18px;
+  padding-left: 35px;
+  padding-right: 35px;
+}
+
+.grid-h2 {
+  font-size: 3.3rem;
+}
+
+.grid-h2-long {
+  font-size: 2.7rem;
+}
+
+.grid figure {
+  /*flex: auto;
+  width: 300px;*/
+	position: relative;
+	/*float: left;*/
+	overflow: hidden;
+	/*margin: 10px 0px;*/
+  /* Need to def. varient widths w/ media breaks */
+  /*min-width: 320px;
+	max-width: 100%;
+	max-height: 360px;
+	width: 48%;*/
+  /*flex: 0 1 250px;*/
+	/*background: #3085a3;*/
+  padding: 2px;
+	text-align: center;
+	cursor: pointer;
+  
+}
+
+.grid figure img {
+  /*flex: auto;*/
+	position: relative;
+	display: block;
+	min-height: 100%;
+	max-width: 100%;
+	opacity: 1;
+}
+
+.grid figure figcaption {
+	/*padding: 2em;*/
+	color: whitesmoke;
+	text-transform: uppercase;
+	/*font-size: 20rem;*/
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.grid figure figcaption::before,
+.grid figure figcaption::after {
+	pointer-events: none;
+}
+
+.grid figure figcaption,
+.grid figure figcaption > a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* Anchor will cover the whole item by default */
+.grid figure figcaption > a {
+	z-index: 1000;
+	text-indent: 200%;
+	white-space: nowrap;
+	font-size: 0;
+	opacity: 0;
+}
+
+.grid figure h2 {
+	word-spacing: -0.15em;
+	font-weight: 300;
+  /*font-size: 4vw;*/
+}
+
+.grid figure h2 span {
+	font-weight: 800;
+}
+
+/*----------------------*/
+/***** Hover-effect *****/
+/*----------------------*/
+
+figure.effect-oscar {
+	background: -webkit-linear-gradient(45deg, black 0%, grey 40%, darkgrey 100%);
+	background: linear-gradient(45deg, black 0%, grey 40%, darkgrey 100%);
+}
+
+figure.effect-oscar img {
+	opacity: 1;
+	-webkit-transition: opacity 0.35s;
+	transition: opacity 0.35s;
+}
+
+figure.effect-oscar figcaption {
+	/*padding: 3em;*/
+	background-color: rgba(58,52,42,0.2);
+	-webkit-transition: background-color 0.35s;
+	transition: background-color 0.35s;
+}
+
+figure.effect-oscar figcaption::before {
+	position: absolute;
+	top: 30px;
+	right: 30px;
+	bottom: 30px;
+	left: 30px;
+	border: 1px solid #fff;
+	content: '';
+}
+
+
+figure.effect-oscar h2 {
+	/*margin: 15% 0 10% 0;*/
+  /*opacity: 0;*/
+  margin-top: 20%;
+  margin-bottom: 10px;
+	-webkit-transition: -webkit-transform 0.35s;
+	transition: transform 0.35s;
+	-webkit-transform: translate3d(0,100%,0);
+	transform: translate3d(0,100%,0);
+}
+
+figure.effect-oscar figcaption::before,
+figure.effect-oscar p, .grid-h2, .grid-h2-long  {
+	opacity: 0;
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transform: scale(0);
+	transform: scale(0);
+  transition: transform 0.5s ease .1s, transform 0.45s;
+}
+
+figure.effect-oscar:hover h2 {
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+figure.effect-oscar:hover figcaption::before,
+figure.effect-oscar:hover p, figure.effect-oscar:hover h2 {
+	opacity: 1;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+  transition: transform 0.5s ease .1s, transform 0.45s;
+}
+
+figure.effect-oscar:hover figcaption {
+	background-color: rgba(58,52,42,0);
+}
+
+figure.effect-oscar:hover img {
+	opacity: .4;
+}
+
+*, *:after, *:before { -webkit-box-sizing: border-box; box-sizing: border-box; }
+.clearfix:before, .clearfix:after { display: table; content: ''; }
+
+.clearfix:after { clear: both; }
+
+
+body {
+	background: antiquewhite;
+	/*font-weight: 400;*/
+  /*line-height: 1.5;*/
+	/*font-size: 1em;*/
+	font-family: Monospace, Arial, sans-serif;
+}
+
+/*a {
+	outline: none;
+	color: #3498db;
+	text-decoration: none;
+}
+
+a:hover, a:focus {
+	color: #528cb3;
+}*/
+
+/*.business {
+  display:none;
+}*/
