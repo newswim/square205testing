@@ -1,16 +1,27 @@
-<body>
+<head>
+  <title>Todo List</title>
+</head>
 
-<br><br><div class="text-center">
-<button id="buttton1" class="btn btn-primary">Click me</button>
-<button id="buttton2" class="btn btn-primary">Click me</button>
-<button id="buttton3" class="btn btn-primary">Click me</button>
+<body>
+<!-- just loading in a template so we can render jQuery events -->
+{{> someTemplate}}
+</body>
+
+<!-- define the template -->
+<template name="someTemplate">
+
+<br><br>
+<div class="text-center">
+	<button id="buttton1" toggle-category="business" class="btn btn-primary">Click me</button>
+	<button id="buttton2" class="btn btn-primary">Click me</button>
+	<button id="buttton3" class="btn btn-primary">Click me</button>
 </div><br><br>
 
-<div class="container">
-<div class="row">
+		<div class="container">
+	<div class="row">
 <div class="grid">
   
-					<figure class="effect-oscar col-md-6 business" id="business">
+<figure class="effect-oscar col-md-6 business" id="business">
 						<img src="http://square205.com/wp-content/uploads/2015/06/Coordi-care-thumb.jpg" alt="img09"/>
 						<figcaption>
 							<h2 class="grid-h2">Coordi-Care</h2>
@@ -19,7 +30,7 @@
 						</figcaption>			
 					</figure>
   
-					<figure class="effect-oscar col-md-6">
+<figure class="effect-oscar col-md-6">
 						<img src="http://square205.com/wp-content/uploads/2015/01/AYL-Thumbnail.jpg" alt="img10"/>
 						<figcaption>
               <h2 class="grid-h2">Authentic <span>Yoga Life</span></h2>
@@ -65,4 +76,4 @@
   </div> <!-- /.row -->
 </div> <!-- /.container -->
 
-</body>
+</template>

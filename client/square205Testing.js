@@ -3,15 +3,31 @@
         $( this ).hide();
     }
 });*/
-$(function() {
-$('#button1').click(function(){
-  var target = $('#business').hasClass("business");
-  if(target.css('display') == 'none'){
-    target.show();
-    // $(this).text('Hide!');
-  }else{
-    target.hide();
-    //$(this).text('Show!');
+// Template.someTemplate.events = function(e){
+//   preventDefault(e);
+//   $('#button1').event.click(function(){
+//     console.log("hello from anon function");
+//     var target = $('.business');
+//     if(target.css('display') == 'none'){
+//       target.show("slow");
+//       // $(this).text('Hide!');
+//     } else {
+//       target.hide("slow");
+//       //$(this).text('Show!');
+//     }
+//   });
+// }
+
+Template.someTemplate.events({
+  'click [toggle-category="business"]' : function(e){
+    console.log("clicked");
+    var target = $('.business');
+    if(target.css('display') == 'none'){
+      target.show("slow");
+      // $(this).text('Hide!');
+    } else {
+      target.hide("slow");
+      //$(this).text('Show!');
+    }
   }
-});
-  });
+})
