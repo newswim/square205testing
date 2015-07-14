@@ -1,41 +1,3 @@
-/*$( "#buttton1" ).click(function() {
-    if ( $( this ).hasClass( "btn" ) ) {
-        $( this ).hide();
-    }
-});*/
-// Template.someTemplate.events = function(e){
-//   preventDefault(e);
-//   $('#button1').event.click(function(){
-//     console.log("hello from anon function");
-//     var target = $('.business');
-//     if(target.css('display') == 'none'){
-//       target.show("slow");
-//       // $(this).text('Hide!');
-//     } else {
-//       target.hide("slow");
-//       //$(this).text('Show!');
-//     }
-//   });
-// }
-
-// $(document).ready(function() {
-//     $(document).on("click","#all-portfolio",function() {
-//       var $target = $('figure');
-//       $target.show("slow");
-//       console.log("test click");
-//     });
-//     $(document).on("click","#branding",function() {
-//     var $target = $('.grid').children().not('.branding');
-//     $target.hide("slow");
-// });
-
-Template.mixitup.rendered=function() {
-  $('#Container').mixItUp();
-}
-Template.mixitup.destroyed=function() {
-  $('#Container').mixItUp('destroy',true);
-}
-
 Template.someTemplate.events({
 //  var figures = document.getElementsByTagName("figure");
 
@@ -72,6 +34,12 @@ Template.someTemplate.events({
   }
 })
 
+// Template.mixitup.rendered=function() {
+//   $('#Container').mixItUp();
+// }
+// Template.mixitup.destroyed=function() {
+//   $('#Container').mixItUp('destroy',true);
+// }
 
 
   // 'click [data-tog="branding"]' : function(e){
