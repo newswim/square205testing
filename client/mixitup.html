@@ -1,32 +1,21 @@
-<head>
-  <title>Todo List</title>
-</head>
-
-<body>
-
-<!-- {{> mixitup}} -->
-
-<!-- just loading in a template so we can render jQuery events -->
-{{> someTemplate}}
-
-</body>
-
-<!-- define the template -->
-<template name="someTemplate">
+<template name="mixitup">
 
 <br><br>
 <div class="text-center" id="toggle-buttons">
-	<button id="buttton1" data-tog="all-portfolio" class="btn btn-primary">all</button>
-	<button id="buttton2" data-tog="branding" class="btn btn-primary">branding</button>
-	<button id="buttton3" data-tog="interactive" class="btn btn-primary">interactive</button>
-	<button id="buttton4" data-tog="photography" class="btn btn-primary">photography</button>
-	<button id="buttton5" data-tog="video" class="btn btn-primary">video</button>
+	<!-- <button data-filter="all" class="btn btn-primary filter">all</button> -->
+	<button data-filter=".branding" class="btn btn-primary filter">branding</button>
+	<button data-filter=".interactive" class="btn btn-primary filter">interactive</button>
+	<button data-filter=".photo" class="btn btn-primary filter">photography</button>
+	<button data-filter=".video" class="btn btn-primary filter">video</button>
+	<button class="sort" data-sort="my-order:asc">Ascending Order</button>
+	<button class="sort" data-sort="my-order:desc">Descending Order</button>
 </div><br><br>
 
 		<div class="container">
 	<div class="row">
 <div class="grid">
-<figure class="effect-oscar col-md-6 interactive">
+<div id="Container">
+<figure class="effect-oscar col-md-6 mix interactive" data-my-order="1">
 						<img src="http://square205.com/wp-content/uploads/2015/06/Coordi-care-thumb.jpg" alt="img09"/>
 						<figcaption>
 							<h2 class="grid-h2">Coordi-Care</h2>
@@ -35,7 +24,7 @@
 						</figcaption>			
 					</figure>
   
-<figure class="effect-oscar col-md-6 interactive photo">
+<figure class="effect-oscar col-md-6 mix interactive photo" data-my-order="2">
 						<img src="http://square205.com/wp-content/uploads/2015/01/AYL-Thumbnail.jpg" alt="img10"/>
 						<figcaption>
               <h2 class="grid-h2">Authentic <span>Yoga Life</span></h2>
@@ -45,7 +34,7 @@
 				</figcaption>			
 					</figure>
 
-<figure class="effect-oscar col-md-6 interactive branding">
+<figure class="effect-oscar col-md-6 mix interactive branding" data-my-order="3">
 						<img src="http://square205.com/wp-content/uploads/2015/01/Physmodo-Thumbnail.jpg" alt="img10"/>
 						<figcaption>
               <h2 class="grid-h2">Physmodo</h2>
@@ -55,7 +44,7 @@
 				</figcaption>			
 					</figure>
   
-<figure class="effect-oscar col-md-6 interactive photo video">
+<figure class="effect-oscar col-md-6 mix interactive photo video" data-my-order="4">
 						<img src="http://square205.com/wp-content/uploads/2015/01/Hawk-Thumbnail.jpg" alt="img10"/>
 						<figcaption>
               <h2 class="grid-h2">Hawk FRP<span></span></h2>
@@ -65,7 +54,7 @@
 				</figcaption>			
 					</figure>
   
-<figure class="effect-oscar col-md-6 interactive">
+<figure class="effect-oscar col-md-6 mix interactive" data-my-order="5">
 						<img src="http://square205.com/wp-content/uploads/2015/01/BSC-Thumbnail.jpg" alt="img10"/>
 						<figcaption>
               <h2 class="grid-h2-long"><span>BSC</span> Rod Lift Solutions</h2>
@@ -74,6 +63,8 @@
 	
 				</figcaption>			
 					</figure>
+  
+</div> <!-- /#Container -->
   
 				</div> <!-- /.grid -->
   </div> <!-- /.row -->

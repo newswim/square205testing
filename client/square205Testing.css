@@ -2,6 +2,18 @@
   -webkit-font-smoothing: antialiased;
 }*/
 
+.hide {
+	display: none;
+}
+
+.show {
+	display: block;
+}
+
+#mix-container .mix{
+    display: none;
+}
+
 figcaption .line {
   text-align: center;
   background: #fff;
