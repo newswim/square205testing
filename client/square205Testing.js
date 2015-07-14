@@ -18,6 +18,17 @@
 //   });
 // }
 
+// $(document).ready(function() {
+//     $(document).on("click","#all-portfolio",function() {
+//       var $target = $('figure');
+//       $target.show("slow");
+//       console.log("test click");
+//     });
+//     $(document).on("click","#branding",function() {
+//     var $target = $('.grid').children().not('.branding');
+//     $target.hide("slow");
+// });
+
 Template.mixitup.rendered=function() {
   $('#Container').mixItUp();
 }
@@ -35,8 +46,10 @@ Template.someTemplate.events({
 
   },
   'click [data-tog="branding"]' : function(e){
-    var $target = $('.grid').children().not('.branding');
-    $target.hide("slow");
+    var $target = $('figure').filter('.branding');
+    var $others = $('figure').not('.branding');
+    $target.show("slow");
+    $others.hide("slow");
   },
   'click [data-tog="interactive"]' : function(e){
     var $target = $('.grid').children().filter('.interactive');
